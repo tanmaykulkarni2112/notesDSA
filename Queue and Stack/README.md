@@ -65,7 +65,7 @@ Stacks are a fundamental data structure in **LeetCode**, and several common **pa
 ---
 
 ## 1. Monotonic Stack (Increasing / Decreasing)
-📌 **Used for: Finding next/previous greater or smaller elements efficiently.**  
+📌 **Used for: Finding next/previous greater or smaller elements efficiently. Might need the use of other datastrucures like HashMaps for mapping.**  
 🔹 **Key Idea**: Maintain a stack of **indices** or **values** in increasing/decreasing order.  
 🔹 **Time Complexity**: **O(n)** (Each element is pushed/popped at most once).  
 
