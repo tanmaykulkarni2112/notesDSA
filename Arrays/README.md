@@ -183,7 +183,6 @@ Absolutely — I’ll just add more relevant LeetCode problems that use the inde
   - Returns > 0 → str1 > str2
 
 ---
-
 ## 🔸 Common LeetCode Problems & Patterns
 
 ### 1. **Next Permutation**
@@ -253,3 +252,51 @@ Absolutely — I’ll just add more relevant LeetCode problems that use the inde
 12. [Leetcode 217 - Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 
 ---
+
+# 🧠 TYPE 4 : Two Pointers - In-Place Rearrangement
+## 🧠 What It Is
+A pattern where two pointers are used to rearrange elements **in-place**, usually to:
+- Filter values
+- Shift/move elements
+- Maintain relative order
+
+Usually done in **O(n)** time and **O(1)** space.
+
+---
+
+## 📌 Common Use Cases
+
+### 1. **Remove Elements / Filter Values**
+- [Leetcode 27 - Remove Element](https://leetcode.com/problems/remove-element/)
+
+### 2. **Move Zeros / Shift Elements**
+- [Leetcode 283 - Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+
+### 3. **Segregate Even and Odd / 0s and 1s**
+- [Leetcode 905 - Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)
+- [Leetcode 75 - Sort Colors (Dutch National Flag)](https://leetcode.com/problems/sort-colors/)
+
+### 4. **Remove Duplicates from Sorted Array**
+- [Leetcode 26 - Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+- [Leetcode 80 - Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
+
+### 5. **Partition Array Around a Pivot**
+- [Leetcode 215 - Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+
+### 6. **Reverse an Array / Part of It**
+- [Leetcode 344 - Reverse String](https://leetcode.com/problems/reverse-string/)
+- [Leetcode 541 - Reverse String II](https://leetcode.com/problems/reverse-string-ii/)
+
+### 7. **Rotate Array**
+- [Leetcode 189 - Rotate Array](https://leetcode.com/problems/rotate-array/)
+
+### 8. **Flatten Arrays / Merge Intervals**
+- [Leetcode 56 - Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+
+### 9. **Sort Colors (Dutch National Flag Problem)**
+- [Leetcode 75 - Sort Colors](https://leetcode.com/problems/sort-colors/)
+
+### 10. **Sliding Window Setup**
+- [Leetcode 283 - Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+- [Leetcode 26 - Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+
