@@ -19,6 +19,11 @@ Here’s how we can declare, initialize, update, and access an array in Java:
 
 ```java
 public class First {
+
+    public static int[] arrayReturn () {
+            return new int[] {9, 10, 11}; // another way of returning array
+        }
+
     public static void main(String[] args) {
         // 1. Declaration and initialization of the array
         int[] arr = new int[5];  // Array of integers with size 5
@@ -33,6 +38,13 @@ public class First {
         for (int val : arr) {
             System.out.println(val);
         }
+
+        // Printing the returned array
+        int returnArr[] = arrayReturn(); // Store in new array to access 
+        for(int val : returnArr) {
+            System.out.println(val);
+        }
+
     }
 }
 ```
@@ -172,18 +184,6 @@ Absolutely — I’ll just add more relevant LeetCode problems that use the inde
 
 ---
 
-# 🧠 Java Lexicographical Order - LeetCode Cheat Sheet
-
-## 🔹 Basics of Lexicographical Order
-- Works like dictionary order
-- Compare character-by-character (Unicode value)
-- In Java: `str1.compareTo(str2)`
-  - Returns < 0 → str1 < str2
-  - Returns = 0 → str1 == str2
-  - Returns > 0 → str1 > str2
-
----
-
 ## 🔸 Common LeetCode Problems & Patterns
 
 ### 1. **Next Permutation**
@@ -228,6 +228,28 @@ Absolutely — I’ll just add more relevant LeetCode problems that use the inde
 
 ---
 
-Want an extension of this into a PDF or printable format? Just say the word! 🚀
 
+# 🧠 TYPE 3 : Store are you go (HashMap-Based Problems)
 
+## 🔹 Intuition:
+> "I’m iterating, and I want to know **if I’ve seen something before** (or its complement / match / condition)."
+> Usually uses a HashMap or HashSet to store values as you go.
+
+---
+
+## 🔸 Problem List:
+
+1. [Leetcode 1 - Two Sum](https://leetcode.com/problems/two-sum/)
+2. [Leetcode 167 - Two Sum II (Sorted)](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+3. [Leetcode 560 - Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+4. [Leetcode 523 - Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)
+5. [Leetcode 1099 - Two Sum Less Than K](https://leetcode.com/problems/two-sum-less-than-k/)
+6. [Leetcode 15 - 3Sum](https://leetcode.com/problems/3sum/)
+7. [Leetcode 16 - 3Sum Closest](https://leetcode.com/problems/3sum-closest/)
+8. [Leetcode 18 - 4Sum](https://leetcode.com/problems/4sum/)
+9. [Leetcode 653 - Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)
+10. [Leetcode 532 - K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)
+11. [Leetcode 1679 - Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs/)
+12. [Leetcode 217 - Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+
+---
