@@ -59,7 +59,7 @@ public class First {
 - Arrays can store other types like `char[]`, `double[]`, `String[]`, etc., but all elements must be of the same type.
 
 
-## Type 1:  Index marking
+## **Type 1:  Index marking**
 
 The technique can be used for the problems like - 
 
@@ -159,3 +159,75 @@ Absolutely — I’ll just add more relevant LeetCode problems that use the inde
 - [ ] [Find the Duplicate and Missing Number](https://leetcode.com/problems/set-mismatch/)
 
 ---
+
+# 🧠 TYPE 2 : Java Lexicographical Order
+
+## 🔹 Basics of Lexicographical Order
+- Works like dictionary order
+- Compare character-by-character (Unicode value)
+- In Java: `str1.compareTo(str2)`
+  - Returns < 0 → str1 < str2
+  - Returns = 0 → str1 == str2
+  - Returns > 0 → str1 > str2
+
+---
+
+# 🧠 Java Lexicographical Order - LeetCode Cheat Sheet
+
+## 🔹 Basics of Lexicographical Order
+- Works like dictionary order
+- Compare character-by-character (Unicode value)
+- In Java: `str1.compareTo(str2)`
+  - Returns < 0 → str1 < str2
+  - Returns = 0 → str1 == str2
+  - Returns > 0 → str1 > str2
+
+---
+
+## 🔸 Common LeetCode Problems & Patterns
+
+### 1. **Next Permutation**
+- **Problem**: [Leetcode 31 - Next Permutation](https://leetcode.com/problems/next-permutation/)
+
+---
+
+### 2. **All Lexicographical Permutations**
+- **Problem**: [Leetcode 46 - Permutations](https://leetcode.com/problems/permutations/) / [Leetcode 47 - Permutations II](https://leetcode.com/problems/permutations-ii/)
+
+---
+
+### 3. **Alien Dictionary**
+- **Problem**: [Leetcode 953 - Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary/)
+
+---
+
+### 4. **K-th Permutation**
+- **Problem**: [Leetcode 60 - Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)
+
+---
+
+### 5. **Lexicographically Smallest Subsequence**
+- **Problems**:
+  - [Leetcode 316 - Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)
+  - [Leetcode 1081 - Smallest Subsequence](https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/)
+
+---
+
+## 🔸 Quick Tips
+- Always sort input if question asks for lex order
+- Use `compareTo()` for string comparisons
+- Convert numbers to string (`String.valueOf(num)`) for lexicographical comparisons
+
+---
+
+## 📌 Related Java Methods
+- `String.compareTo(String)`
+- `Arrays.sort()`
+- `Collections.sort()`
+- `PriorityQueue` with custom comparator
+
+---
+
+Want an extension of this into a PDF or printable format? Just say the word! 🚀
+
+
