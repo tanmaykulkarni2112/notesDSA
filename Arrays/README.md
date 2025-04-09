@@ -300,3 +300,95 @@ Usually done in **O(n)** time and **O(1)** space.
 - [Leetcode 283 - Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 - [Leetcode 26 - Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
+# prefix tracking/ sliding window
+
+Absolutely! This pattern is most commonly known as:
+
+> ### 🔑 **"Frequency Counter" Pattern**  
+But you can totally think of it as:
+- **Frequency Array** → when using `int[]`
+- **Frequency Map** → when using `HashMap<Char, Int>`
+
+---
+# 🧠 TYPE 5 : Frequency Counter Pattern
+A common pattern where you **count occurrences of characters or elements**, typically in strings or arrays. Useful for comparison, inclusion checks, anagrams, and permutations.
+
+---
+
+## ✅ When to Use
+- Comparing two strings or arrays
+- Checking if one string can be formed from another
+- Validating anagrams or permutations
+- Sliding window character matching
+
+---
+
+## 📦 Data Structures
+| Type            | When to Use                                      |
+|-----------------|--------------------------------------------------|
+| `int[26]`       | When working with lowercase English letters only |
+| `HashMap`       | When characters or keys are variable or Unicode  |
+
+---
+
+## ⚙️ Core Idea
+
+1. Count elements from one source
+2. Use the frequency info to compare or validate the second source
+
+---
+
+## 🔁 Common Problems
+
+| Problem | Type |
+|--------|------|
+| [383. Ransom Note](https://leetcode.com/problems/ransom-note/) | Can one string be built from another |
+| [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Compare char frequency |
+| [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Group by frequency signature |
+| [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/) | Sliding window + match frequency |
+| [438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Sliding window anagrams |
+| [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Advanced: sliding window + freq map |
+
+---
+
+## ✨ Template (with Array)
+```java
+int[] freq = new int[26];  // for lowercase letters
+
+// Count frequency
+for (char ch : str.toCharArray()) {
+    freq[ch - 'a']++;
+}
+
+// Use frequency
+for (char ch : otherStr.toCharArray()) {
+    if (freq[ch - 'a'] == 0) return false;
+    freq[ch - 'a']--;
+}
+```
+
+---
+
+## ✨ Template (with HashMap)
+```java
+Map<Character, Integer> map = new HashMap<>();
+
+// Count frequency
+for (char ch : str.toCharArray()) {
+    map.put(ch, map.getOrDefault(ch, 0) + 1);
+}
+
+// Use frequency
+for (char ch : otherStr.toCharArray()) {
+    if (!map.containsKey(ch)) return false;
+    if (map.get(ch) == 1) map.remove(ch);
+    else map.put(ch, map.get(ch) - 1);
+}
+```
+
+---
+
+##  Pro Tip
+Use `int[26]` for speed and simplicity **if the character set is known and small**. Use `HashMap` when flexibility is needed.
+
+---
