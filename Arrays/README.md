@@ -392,3 +392,64 @@ for (char ch : otherStr.toCharArray()) {
 Use `int[26]` for speed and simplicity **if the character set is known and small**. Use `HashMap` when flexibility is needed.
 
 ---
+Awesome! Here’s your updated **Type 6** entry in the official cheatsheet style — now cleanly split into **Type 6A** and **6B**, covering both single and double element cases. Let's lock it in 💼✨
+
+---
+
+# 🧠 **Type 6 – Remove From Ends (Target Element Based)**
+
+### 🧩 Core Idea
+You’re allowed to **remove elements only from the ends** (left or right), and your goal is to:
+- Either **remove a specific target** (like `x`, a sum, or a value), or
+- **Eliminate two specific elements** (like `min` and `max`),
+- While **minimizing the number of operations**.
+
+---
+
+### 🔹 **Type 6A – Remove One Element / Target Value**
+> 🟨 Useful when you must remove elements from ends to hit a **target condition** (e.g., sum = `x`)
+
+#### ✅ Common Examples
+| Problem | Link | Description |
+|--------|------|-------------|
+| **Leetcode 1658 – Minimum Operations to Reduce X to Zero** | [🔗](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/) | Remove from ends until remaining sum is `x`. Try all prefix+suffix combos. |
+| **GFG – Min deletions to make sum divisible by K** | [🔗](https://www.geeksforgeeks.org/minimum-deletions-make-sum-divisible-k/) | Remove from ends to reach a valid modulo condition. |
+
+#### 🧠 Strategy
+- Precompute **prefix sums** and **suffix sums**.
+- Use a **map** or **two-pointer** approach to find where `prefix + suffix = target`.
+- Track and return **minimum number of deletions**.
+
+---
+
+### 🔹 **Type 6B – Remove Two Key Elements (min & max)**
+> 🟩 Classic when you must **remove both `min` and `max`**, only from ends.
+
+#### ✅ Common Examples
+| Problem | Link | Description |
+|--------|------|-------------|
+| **Leetcode 2091 – Removing Min and Max** | [🔗](https://leetcode.com/problems/removing-minimum-and-maximum-from-array/) | Remove both `min` and `max` by trying all combinations (L, R, Both). |
+| **GFG – Make array good by removing min/max** | [🔗](https://www.geeksforgeeks.org/minimum-deletions-make-array-good/) | Similar idea but with condition on array content.
+
+#### 🧠 Strategy
+1. Find `minIdx` and `maxIdx`
+2. Try all 3 removal paths:
+   - Remove both from **left**
+   - Remove both from **right**
+   - Remove one from **left**, one from **right**
+3. Return `min(left, right, bothSides)`
+
+#### 🧪 Code Snippet
+```java
+int left = Math.max(minIdx + 1, maxIdx + 1);
+int right = Math.max(n - minIdx, n - maxIdx);
+int both = (minIdx + 1) + (n - maxIdx);
+return Math.min(left, Math.min(right, both));
+```
+
+---
+
+### ✅ When to Recognize This Pattern:
+- You **can’t remove from middle** — only ends are allowed.
+- You have **specific targets** to eliminate (`min`, `max`, sum = x).
+- Try **prefix + suffix** combinations OR simulate smart index cuts.
