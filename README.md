@@ -204,7 +204,37 @@ Output:
 1
 Blastoff!
 ```
+---
+# Complex datastructures
 
+## List (Arrays)
+These are the dynamic datastructures which can store the values in sequential order, this helps in accessing the element with the help of their indexes. The lists are mutable and are homogenous in nature. 
+
+
+```python 
+list1 = ['ab', 'cd']
+list2 = [5,6,7] 
+```
+
+### Traversal in lists
+We can traverse the lists and we can access them using the indexes, the values or both. Following are the ways of accessing.
+```python
+l1 = ["apple", "orange", "banana"]
+for i in l1: 
+    print(i)
+
+for i in range(len(l1)):
+    print (l1[i])
+
+for i,v in l1:
+    printf(i + "index holds" + v)
+
+for index, value in enumerate(l1):
+    print(index)
+    print(value)
+```
+
+---
 ## **in** keyword
 The in keyword deals with the datastructres when we want to check for the presence of the element in some datastructure like
 
@@ -250,3 +280,42 @@ print(ex1 is ex2) # return False
 
 ---
 ## **or** keyword
+
+
+Here’s a handy list of terminal commands often used when dealing with Python files. These commands help manage files, packages, and the environment effectively:
+
+### **1. General Commands**
+- `!ls` – Lists the files and directories in the current working directory (Linux/macOS/WSL).
+- `dir` – Similar to `ls`, but for Windows to list the files and directories.
+- `!pwd` – Prints the current working directory (Linux/macOS/WSL).
+- `cd <directory>` – Changes the current directory.
+- `!rm <filename>` – Deletes a file (Linux/macOS/WSL).
+- `!mkdir <directory>` – Creates a new directory.
+
+### **2. Managing Python Packages**
+- `!pip install <package>` – Installs a Python package.
+- `!pip uninstall <package>` – Uninstalls a Python package.
+- `!pip list` – Lists all installed Python packages.
+- `!pip show <package>` – Displays details of a specific installed package.
+- `!pip freeze > requirements.txt` – Saves all current dependencies to `requirements.txt`.
+
+### **3. Running Python Scripts**
+- `python <filename>.py` – Runs the specified Python script.
+- `python -m <module>` – Runs a module as a script (e.g., `python -m http.server`).
+
+### **4. Virtual Environments**
+- `python -m venv <env_name>` – Creates a new virtual environment.
+- `source <env_name>/bin/activate` – Activates the virtual environment (Linux/macOS).
+- `<env_name>\Scripts\activate` – Activates the virtual environment (Windows).
+- `deactivate` – Deactivates the virtual environment.
+
+### **5. File Manipulation & Output**
+- `!cat <file>` – Displays the contents of a file (Linux/macOS/WSL).
+- `type <file>` – Displays file contents (Windows equivalent of `cat`).
+- `!cp <source> <destination>` – Copies a file (Linux/macOS/WSL).
+- `!mv <source> <destination>` – Moves or renames a file (Linux/macOS/WSL).
+
+### **6. Debugging and Linting**
+- `python -m pdb <filename>.py` – Runs the Python debugger for a script.
+- `!flake8 <filename>.py` – Performs linting on a Python file (if `flake8` is installed).
+- `!pylint <filename>.py` – Another linting tool for Python scripts.
