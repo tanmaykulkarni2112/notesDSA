@@ -1,5 +1,10 @@
 # Essentials
 
+
+## Min/ Max
+`max(1,2)`
+`min(1,2)`
+
 ## Sorting 
 
 ```python
@@ -10,6 +15,15 @@ string = "Tanmay" # STRING CAN BE ONLY SORTED THIS WAY
 sortedStr = sorted(string)
 ```
 
+
+## Set
+
+```python
+mySet = set()
+set.add(1)
+set.remove(1)
+
+```
 
 ## Map 
 
@@ -64,5 +78,16 @@ print(string) #!
 # Substring 
 bigString = "abcdefgh"
 lilString = bigString[0:len(bigString)] #abcdefg
+
+word = "BIG"
+word.lower() # Not inplace
+
+ord('A') # --> ASCII of A
+ord('a') # --> ASCII of a
+ord('0') # --> ASCII of 0
+
+
+chr(97) # charcter at 97 ASCII
 ```
+
 
