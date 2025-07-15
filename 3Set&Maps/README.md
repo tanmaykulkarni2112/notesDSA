@@ -12,28 +12,35 @@ A **set** in Python is an unordered collection of unique items. Sets automatical
    - `add(item)`: Adds a single element to the set.
    - `remove(item)`: Removes an element from the set. If the element is not found, it raises a `KeyError`.
    - `discard(item)`: Similar to `remove()`, but doesn’t raise an error if the element isn’t found.
+   - `pop()`: Removes and returns an arbitrary element from the set. Raises a `KeyError` if the set is empty.
+   - `clear()`: Removes all elements from the set.
    - `in`: Checks if an item is in the set (`if 2 in myset`).
+
+#### Set Operations:
+- **Union:** `set1.union(set2)` or `set1 | set2` - Returns a new set with all elements from both sets.
+- **Intersection:** `set1.intersection(set2)` or `set1 & set2` - Returns a new set with elements common to both sets.
+- **Difference:** `set1.difference(set2)` or `set1 - set2` - Returns a new set with elements in `set1` but not in `set2`.
+- **Symmetric Difference:** `set1.symmetric_difference(set2)` or `set1 ^ set2` - Returns a new set with elements in either set, but not both.
+
+#### Time Complexity:
+- **add, remove, discard, in:** Average case O(1), Worst case O(n)
+- **union, intersection, difference:** O(len(s1) + len(s2))
+
+#### When to Use Sets:
+- Removing duplicate elements from a list.
+- Membership testing (checking if an element is present).
+- Performing mathematical set operations like union, intersection, and difference.
 
 #### Example Code:
 ```python
-myset = set()  # Correct way to initialize
-myset.add(2)
-myset.add(1)
-myset.add(7)
-myset.add(2)  # Duplicate, won't be added
+myset = {1, 2, 3}
+myset.add(4)  # {1, 2, 3, 4}
+myset.remove(3) # {1, 2, 4}
 
-if 2 in myset:
-    print(2)  # Output: 2
-
-myset.remove(2)  # Removes 2 from the set
-
-# Creating a set from a string
-string = "ajhysvafjkn bfkaubsfasfbausbfnaks"
-strset = set(string)  # Removes duplicates
-
-# Looping through a set
-for s in strset:
-    print(s)  # Prints unique characters in any order
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print(set1.union(set2))  # {1, 2, 3, 4, 5}
+print(set1.intersection(set2)) # {3}
 ```
 
 ---
@@ -46,20 +53,33 @@ A **dictionary** in Python is a collection of key-value pairs. Keys are unique, 
    - Dictionaries can have various hashable data types as keys, like strings, integers, or tuples.
    - Example:
      ```python
-     d = {1: "Hello", 2: "BYE"}  # Integer keys
-     dict2 = {(1, 2, 3, 4): "tuple hashed", "key2": "str hashed"}  # Tuple and string keys
+     d = {1: "Hello", 2: "BYE"}
      ```
 
 2. **Common Dictionary Methods:**
-   - `d.keys()`: Returns all the keys in the dictionary.
-   - `d.values()`: Returns all the values in the dictionary.
-   - `d.items()`: Returns key-value pairs as tuples.
+   - `d.keys()`: Returns a view object displaying a list of all the keys.
+   - `d.values()`: Returns a view object displaying a list of all the values.
+   - `d.items()`: Returns a view object displaying a list of key-value tuple pairs.
+   - `d.get(key, default=None)`: Returns the value for a key if it exists, otherwise returns a default value.
+   - `d.pop(key)`: Removes the specified key and returns the corresponding value.
+   - `d.popitem()`: Removes and returns the last inserted key-value pair as a tuple.
+
+#### Time Complexity:
+- **Access, Insert, Delete:** Average case O(1), Worst case O(n)
+- **Iteration:** O(n)
+
+#### When to Use Dictionaries:
+- Storing and retrieving data with a key.
+- Counting frequencies of items.
+- Implementing caches or memoization.
 
 #### Example Code:
 ```python
-d = {1: "Hello", 2: "BYE"}
-dict2 = {(1, 2, 3, 4): "tuple hashed", "key2": "str hashed"}
-print(dict2["key2"])  # Output: str hashed
+d = {'a': 1, 'b': 2}
+print(d.get('a')) # 1
+print(d.get('c', 0)) # 0
+
+d.pop('a') # returns 1 and d becomes {'b': 2}
 
 for key, val in d.items():
     print(f"The key is {key} and the value is {val}")
@@ -76,8 +96,7 @@ from collections import defaultdict
 
 default = defaultdict(int)
 default[1] = 232
-default[2] = 645
-print(default[5])  # Output: 0 (default value for `int`)
+print(default[5])  # Output: 0 (default value for int)
 ```
 
 #### **Counter (from `collections`)**
@@ -87,8 +106,7 @@ from collections import Counter
 
 str1 = "acdacdcacdcsgrgsacdcavfersacd"
 counter = Counter(str1)
-print(counter)  
-# Output: {'a': 6, 'c': 7, 'd': 6, ...} (frequency of each character)
+print(counter['a']) # 6
 ```
 
 ---
